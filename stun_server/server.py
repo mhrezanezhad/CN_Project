@@ -38,7 +38,7 @@ def get_one_user():
     socket = r.get(username)
     if socket:
         return jsonify({"username": username, "socket": socket.decode()}), 200
-    return jsonify({"message": "Can't find any peer with this username!"}), 404
+    return jsonify({"error": "Can't find any peer with this username!"}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
